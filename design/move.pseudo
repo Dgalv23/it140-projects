@@ -1,5 +1,5 @@
 # Project One Move-Between-Rooms Pseudocode
-#
+
 # Graded checkpoint: Module Five Project One
 # Later use: conceptual support for M6; movement design for M7
 #
@@ -9,17 +9,32 @@
 
 # TODO 1: Identify the information the movement process needs.
 # Consider the player's current room and movement command.
-
+SET current_room = "Security Operations Center"
+SET move_command = ""
 # TODO 2: Prompt for and receive the player's movement command.
-
+OUTPUT "Enter a movement command: go North, go South, go East, or go West"
+INPUT move_command
 # TODO 3: Validate whether the requested movement is possible from the
 # current room. Show the decision clearly.
-
+IF move_command is a valid direction from current_room
+    SET next_room = the room in the requested direction
 # TODO 4: Describe what happens when the movement command is valid.
 # Include the room update and player output.
-
+IF move_command is valid
+    SET current_room = next_room
+    OUTPUT "You are now in the " + current_room
 # TODO 5: Describe what happens when the movement command is invalid.
 # Include the output the player should receive.
-
+ELSE
+    OUTPUT "Invalid movement command."
 # TODO 6: Show how movement fits into repeated gameplay.
 # The final game continues accepting commands until a required ending occurs.
+WHILE game is not over
+    OUTPUT current_room
+    INPUT move_command
+    IF move_command is valid from current_room
+        SET current_room = the room in the requested direction
+        OUTPUT "You are now in the " + current_room
+    ELSE
+        OUTPUT "You cannot go that way."
+END WHILE
