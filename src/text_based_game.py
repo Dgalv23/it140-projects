@@ -81,8 +81,8 @@ def main():
     # TODO: Call the instruction function at the appropriate time.
     show_instructions()
     # TODO: Create the gameplay loop.
-        while True:
-            show_status(current_room, inventory, rooms)
+    while True:
+        show_status(current_room, inventory, rooms)
 
             command = input("\nEnter your command: ").lower().strip()
             
@@ -119,9 +119,10 @@ def main():
                     print("You collected the", item)
                 else:
                     print("That item is not in this room.")
-            else:
-                print("There is no item to collect here.")
                         else:
+                print("There is no item to collect here.")
+
+        else:
             print("Invalid command. Use 'go direction' or 'get item name'.")
 
     # Within the loop:
