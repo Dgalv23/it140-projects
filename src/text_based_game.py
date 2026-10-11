@@ -119,8 +119,8 @@ def main():
                     print("You collected the", item)
                 else:
                     print("That item is not in this room.")
-                        else:
-                print("There is no item to collect here.")
+                else:
+                    print("There is no item to collect here.")
 
         else:
             print("Invalid command. Use 'go direction' or 'get item name'.")
