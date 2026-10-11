@@ -110,6 +110,7 @@ def main():
         elif command.startswith('get '):
             item_name = command[4:]
 
+            
             if 'item' in rooms[current_room]:
                 item = rooms[current_room]['item']
 
@@ -119,11 +120,12 @@ def main():
                     print("You collected the", item)
                 else:
                     print("That item is not in this room.")
-                else:
-                    print("There is no item to collect here.")
+            else:
+                print("There is no item to collect here.")
 
         else:
             print("Invalid command. Use 'go direction' or 'get item name'.")
+
 
     # Within the loop:
     #   - Show player status.
