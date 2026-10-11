@@ -84,7 +84,7 @@ def main():
     while True:
         show_status(current_room, inventory, rooms)
 
-            command = input("\nEnter your command: ").lower().strip()
+        command = input("\nEnter your command: ").lower().strip()
             
         if command.startswith('go '):
             direction = command[3:]
