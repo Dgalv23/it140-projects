@@ -12,18 +12,23 @@ def show_instructions():
     print("Collect items: get 'item name'")
 
 
+
 def show_status(current_room, inventory, rooms):
     """Display the player's current game status."""
     # TODO: Show the current room.
     # TODO: Show the current inventory.
     # TODO: Show the current-room item when one is available.
+
     print("\nYou are in the", current_room)
     print("Inventory:", inventory)
 
-if 'item' in rooms[current_room]:
-    print("You see a", rooms[current_room]['item'])
+    if 'item' in rooms[current_room]:
+        print("You see a", rooms[current_room]['item'])
 
-print("---------------------------")
+    print("---------------------------")
+
+
+
 
 
 def main():
@@ -107,10 +112,10 @@ def main():
             else:
                 print("You cannot go that way.")
 
+        
         elif command.startswith('get '):
             item_name = command[4:]
 
-            
             if 'item' in rooms[current_room]:
                 item = rooms[current_room]['item']
 
